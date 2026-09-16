@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 int main() {
@@ -19,7 +18,7 @@ int main() {
         cout << "Lapis ke-" << (i + 1) << ":\n";
         for (int j = 0; j < 3; j++) {
             for (int k = 0; k < 4; k++) {
-                cout << setw(4) << arr[i][j][k];
+                cout << arr[i][j][k] << " ";
             }
             cout << "\n";
         }
