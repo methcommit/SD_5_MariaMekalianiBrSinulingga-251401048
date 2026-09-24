@@ -5,26 +5,27 @@ struct node{
     int value;
     node *next;
 };
+
 node* head = NULL;
 node* tail = NULL;
 
-//insert first
-    void insertFirst(int n){
+//insert last
+void insertLast(int n){
     node *newnode = new node;
     newnode->value = n;
     newnode->next = NULL;
 
     if (head == NULL){
         head = newnode;
-        tail = newnode;
+        tail = head;
     } else {
-        newnode->next = head;
-        head = newnode;
+        tail->next = newnode;
+        tail = newnode;
     }
 }
 
 //delete first
-    void deleteFirst(){
+void deleteFirst(){
     if (head == NULL){
         cout << "List kosong." << endl;
         return;
@@ -47,14 +48,21 @@ void display(){
 }
 
 int main(){
-    system("cls");
-
-    insertFirst(10);
+    insertLast(10);
     display();
-    insertFirst(5);
+    insertLast(20);
+    display();
+    insertLast(30);
+    display();
+
+    deleteFirst();
+    display();
+    deleteFirst();
+    display();
+    deleteFirst();
     display();
     deleteFirst();
     display();
 
-return 0;
+    return 0;
 }
